@@ -14,12 +14,54 @@ SwiperCore.use([Navigation, Pagination]);
 
 const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ images }) => {
   return (
-    <Swiper navigation pagination={{ clickable: true }} className="h-full" loop>
+    <Swiper
+      navigation={{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }}
+      pagination={{ clickable: true }}
+      className="h-full"
+      loop
+    >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
           <img src={image} alt={`Webtoon Service Banner ${index}`} />
         </SwiperSlide>
       ))}
+
+      <div className="swiper-button-prev">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tl from-blue-600 to-purple-600">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-chevron-left"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <div className="swiper-button-next">
+        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tl from-blue-600 to-purple-600">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-chevron-right"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </div>
     </Swiper>
   );
 };
