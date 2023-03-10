@@ -1,4 +1,5 @@
 import WebtoonServiceBanner from '../src/WebtoonServiceBaaner';
+import EpisodeComponent from '../src/EpisodeComponent';
 
 export default function Home() {
   const images = [
@@ -13,6 +14,7 @@ export default function Home() {
           <div className="flex justify-center w-full h-[400px]">
             <WebtoonServiceBanner images={images} />
           </div>
+          <EpisodeComponent episode={{ name: '테스트 작품', artist: '홍길동', thumbnail: '/images/test.png' }} />
         </div>
       </div>
     </>
