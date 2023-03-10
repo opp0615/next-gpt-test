@@ -13,7 +13,7 @@ const EpisodeSection: React.FC<Props> = ({ title, episodes }) => {
       <h2 className="mb-4 text-2xl font-bold">{title}</h2>
       <div className="flex overflow-x-auto">
         {episodes.map((episode) => (
-          <div className="flex-none" key={episode.name}>
+          <div className="flex-none mr-4" key={episode.name}>
             <EpisodeComponent episode={episode} />
           </div>
         ))}
