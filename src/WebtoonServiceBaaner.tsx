@@ -14,7 +14,7 @@ SwiperCore.use([Navigation, Pagination]);
 
 const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ images }) => {
   const renderPaginationBullet = (index: number, className: string): string => {
-    return `<span class="${className} bg-gradient-to-tl from-blue-600 to-purple-600 rounded-full w-3 h-3"></span>`;
+    return `<span class="${className} bg-gradient-to-tl from-blue-600 to-purple-600 rounded-full w-10 h-10" style="background-color:#805ad5;"></span>`;
   };
 
   return (
