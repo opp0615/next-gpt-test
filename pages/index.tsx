@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <div className="flex justify-center">
-        <div className="max-w-[720px]">
+        <div className="max-w-[720px] w-full">
           <div className="flex justify-center w-full h-[400px]">
             <WebtoonServiceBanner images={images} />
           </div>
