@@ -13,13 +13,21 @@ interface WebtoonServiceBannerProps {
 SwiperCore.use([Navigation, Pagination]);
 
 const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ images }) => {
+  const renderPaginationBullet = (index: number, className: string): string => {
+    return `<span class="${className} bg-gradient-to-tl from-blue-600 to-purple-600 rounded-full w-3 h-3"></span>`;
+  };
+
   return (
     <Swiper
       navigation={{
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       }}
-      pagination={{ clickable: true }}
+      pagination={{
+        clickable: true,
+        bulletClass: 'swiper-pagination-bullet',
+        renderBullet: renderPaginationBullet,
+      }}
       className="h-full"
       loop
     >
