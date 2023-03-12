@@ -7,13 +7,13 @@ import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import 'swiper/swiper-bundle.css';
 
 interface WebtoonServiceBannerProps {
-  images: string[];
+  webtoons: { image: string | undefined; title: string }[];
 }
 
 // Install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
 
-const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ images }) => {
+const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ webtoons }) => {
   const renderPaginationBullet = (index: number, className: string): string => {
     return `<span class="${className} bg-gradient-to-tl rounded-full w-10 h-10" style="background-color:#fff;"></span>`;
   };
@@ -29,12 +29,27 @@ const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ images }) =
         bulletClass: 'swiper-pagination-bullet',
         renderBullet: renderPaginationBullet,
       }}
-      className="h-full"
+      className="w-full h-full"
       loop
     >
-      {images.map((image, index) => (
+      {webtoons.map(({ image, title }, index) => (
         <SwiperSlide key={index}>
-          <img src={image} alt={`Webtoon Service Banner ${index}`} />
+          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            <img src={image} alt={`Webtoon Service Banner ${index}`} className="w-full h-full" />
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '10px',
+                right: '10px',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                padding: '5px 10px',
+                borderRadius: '5px',
+                fontWeight: 'bold',
+              }}
+            >
+              {title}
+            </div>
+          </div>
         </SwiperSlide>
       ))}
 
