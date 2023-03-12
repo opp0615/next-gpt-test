@@ -5,9 +5,10 @@ import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
+import Link from 'next/link';
 
 interface WebtoonServiceBannerProps {
-  webtoons: { image: string | undefined; title: string }[];
+  webtoons: { id: string; image: string | undefined; title: string }[];
 }
 
 // Install Swiper modules
@@ -32,24 +33,26 @@ const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ webtoons })
       className="w-full h-full"
       loop
     >
-      {webtoons.map(({ image, title }, index) => (
-        <SwiperSlide key={index}>
-          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-            <img src={image} alt={`Webtoon Service Banner ${index}`} className="w-full h-full" />
-            <div
-              style={{
-                position: 'absolute',
-                bottom: '10px',
-                right: '10px',
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                padding: '5px 10px',
-                borderRadius: '5px',
-                fontWeight: 'bold',
-              }}
-            >
-              {title}
+      {webtoons.map(({ id, image, title }, index) => (
+        <SwiperSlide key={id}>
+          <Link href={`/webtoon/${id}`} className="cursor-pointer">
+            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+              <img src={image} alt={`Webtoon Service Banner ${index}`} className="w-full h-full" />
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: '10px',
+                  right: '10px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  padding: '5px 10px',
+                  borderRadius: '5px',
+                  fontWeight: 'bold',
+                }}
+              >
+                {title}
+              </div>
             </div>
-          </div>
+          </Link>
         </SwiperSlide>
       ))}
 

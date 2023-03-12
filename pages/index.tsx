@@ -5,13 +5,13 @@ import { Episode } from '../src/types';
 import { fantasyEpisodeList, romanceEpisodeList } from '../src/constant';
 
 export default function Home() {
-  const webtoons: { image: string | undefined; title: string }[] = [
-    { image: romanceEpisodeList[1].banner, title: romanceEpisodeList[1].name },
-    { image: romanceEpisodeList[0].banner, title: romanceEpisodeList[0].name },
-    { image: fantasyEpisodeList[0].banner, title: fantasyEpisodeList[0].name },
-    { image: fantasyEpisodeList[3].banner, title: fantasyEpisodeList[3].name },
+  const webtoons: { id: string; image: string | undefined; title: string }[] = [
+    { id: romanceEpisodeList[1].id, image: romanceEpisodeList[1].banner, title: romanceEpisodeList[1].name },
+    { id: romanceEpisodeList[0].id, image: romanceEpisodeList[0].banner, title: romanceEpisodeList[0].name },
+    { id: fantasyEpisodeList[0].id, image: fantasyEpisodeList[0].banner, title: fantasyEpisodeList[0].name },
+    { id: fantasyEpisodeList[3].id, image: fantasyEpisodeList[3].banner, title: fantasyEpisodeList[3].name },
   ];
-  const testEpisode: Episode = { name: '테스트 작품', artist: '홍길동', thumbnail: '/images/test.jpg' };
+  const testEpisode: Episode = { id: 'test', name: '테스트 작품', artist: '홍길동', thumbnail: '/images/test.jpg' };
 
   return (
     <>
