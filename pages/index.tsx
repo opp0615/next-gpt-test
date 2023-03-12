@@ -1,4 +1,4 @@
-import WebtoonServiceBanner from '../src/WebtoonServiceBaaner';
+import WebtoonServiceBanner from '../src/WebtoonServiceBanner';
 import Header from '../src/Header';
 import EpisodeSection from '../src/EpisodeSection';
 import { Episode } from '../src/types';
@@ -17,22 +17,22 @@ export default function Home() {
     <>
       <div className="flex justify-center">
         <div className="max-w-[720px] w-full">
-          <div className="flex justify-center w-full h-[500px]">
+          <div className="flex justify-center w-full h-[320px] md:h-[500px]">
             <WebtoonServiceBanner webtoons={webtoons} />
           </div>
-          <div className="mt-5">
+          <div className="mt-5 px-[15px]">
             <EpisodeSection title="로맨스" episodes={romanceEpisodeList} />
           </div>
-          <div className="mt-5">
+          <div className="mt-5 px-[15px]">
             <EpisodeSection title="판타지" episodes={fantasyEpisodeList} />
           </div>
-          <div className="mt-5">
+          <div className="mt-5 px-[15px]">
             <EpisodeSection
               title="섹션 테스트"
               episodes={[testEpisode, testEpisode, testEpisode, testEpisode, testEpisode, testEpisode, testEpisode]}
             />
           </div>
-          <div className="mt-5">
+          <div className="mt-5 px-[15px]">
             <EpisodeSection
               title="섹션 테스트"
               episodes={[testEpisode, testEpisode, testEpisode, testEpisode, testEpisode, testEpisode, testEpisode]}
