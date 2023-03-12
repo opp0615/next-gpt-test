@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import EpisodeComponent from './EpisodeComponent';
 import { Episode } from './types';
 import { useState } from 'react';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 interface Props {
   title: string;
@@ -29,13 +30,13 @@ const EpisodeSection: React.FC<Props> = ({ title, episodes }) => {
   return (
     <div className="flex flex-col">
       <h2 className="mb-4 text-2xl font-bold">{title}</h2>
-      <div className="flex items-center">
+      <div className="relative">
         <button
-          className="px-2 py-1 mr-2 bg-gray-200 rounded-md hover:bg-gray-300"
+          className="flex items-center justify-center absolute -left-[16px] bottom-1/2 w-[32px] h-[32px] bg-gray-200 rounded-full hover:bg-gray-300"
           disabled={scrollPosition === 0}
           onClick={scrollLeft}
         >
-          &lt;
+          <AiOutlineLeft color={'black'} />
         </button>
         <div
           className="flex flex-grow overflow-x-auto"
@@ -49,7 +50,7 @@ const EpisodeSection: React.FC<Props> = ({ title, episodes }) => {
           ))}
         </div>
         <button
-          className="px-2 py-1 ml-2 bg-gray-200 rounded-md hover:bg-gray-300"
+          className="flex items-center justify-center absolute -right-[16px] bottom-1/2 w-[32px] h-[32px] bg-gray-200 rounded-full hover:bg-gray-300"
           disabled={
             (containerRef.current &&
               containerRef.current.clientWidth + scrollPosition >= containerRef.current.scrollWidth) ??
@@ -57,7 +58,7 @@ const EpisodeSection: React.FC<Props> = ({ title, episodes }) => {
           }
           onClick={scrollRight}
         >
-          &gt;
+          <AiOutlineRight color={'black'} />
         </button>
       </div>
     </div>
