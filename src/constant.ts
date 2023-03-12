@@ -1,4 +1,4 @@
-import { Episode } from './types';
+import { Episode, Chapter } from './types';
 
 export const romanceEpisodeList: Episode[] = [
   {
@@ -63,5 +63,58 @@ export const fantasyEpisodeList: Episode[] = [
     artist: '이현진',
     thumbnail: '/thumbnail/fantasy5_cut.png',
     banner: '/banner/fantasy5.png',
+  },
+];
+
+export const dummyChapters: Chapter[] = [
+  {
+    title: 'Introduction',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-01-01',
+  },
+  {
+    title: 'Chapter 1',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-01-07',
+  },
+  {
+    title: 'Chapter 2',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-01-14',
+  },
+  {
+    title: 'Chapter 3',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-01-21',
+  },
+  {
+    title: 'Chapter 4',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-01-28',
+  },
+  {
+    title: 'Chapter 5',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-02-04',
+  },
+  {
+    title: 'Chapter 6',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-02-11',
+  },
+  {
+    title: 'Chapter 7',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-02-18',
+  },
+  {
+    title: 'Chapter 8',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-02-25',
+  },
+  {
+    title: 'Conclusion',
+    thumbnail: '/images/test.jpg',
+    uploadedDate: '2022-03-04',
   },
 ];
