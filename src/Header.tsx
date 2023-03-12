@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HiOutlineHome, HiOutlineFilm } from 'react-icons/hi';
-import { FaRegWindowClose } from 'react-icons/fa';
 import classNames from 'classnames';
 import Logo from './Logo';
 

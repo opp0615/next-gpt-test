@@ -1,6 +1,7 @@
 import React from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
@@ -14,7 +15,7 @@ SwiperCore.use([Navigation, Pagination]);
 
 const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ images }) => {
   const renderPaginationBullet = (index: number, className: string): string => {
-    return `<span class="${className} bg-gradient-to-tl from-blue-600 to-purple-600 rounded-full w-10 h-10" style="background-color:#805ad5;"></span>`;
+    return `<span class="${className} bg-gradient-to-tl rounded-full w-10 h-10" style="background-color:#fff;"></span>`;
   };
 
   return (
@@ -37,37 +38,15 @@ const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ images }) =
         </SwiperSlide>
       ))}
 
-      <div className="swiper-button-prev">
-        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tl from-blue-600 to-purple-600">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="feather feather-chevron-left"
-          >
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
+      <div className="swiper-button-prev" style={{ width: '50px', height: '50px' }}>
+        <div className="flex items-center justify-center w-full h-full rounded-full bg-white/80">
+          <AiOutlineLeft size={20} color={'black'} />
         </div>
       </div>
 
-      <div className="swiper-button-next">
-        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tl from-blue-600 to-purple-600">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="feather feather-chevron-right"
-          >
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
+      <div className="swiper-button-next" style={{ width: '50px', height: '50px' }}>
+        <div className="flex items-center justify-center w-full h-full rounded-full bg-white/80">
+          <AiOutlineRight size={20} color={'black'} />
         </div>
       </div>
     </Swiper>
