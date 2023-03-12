@@ -44,7 +44,7 @@ const EpisodeSection: React.FC<Props> = ({ title, episodes }) => {
           onScroll={() => setScrollPosition(containerRef.current?.scrollLeft ?? 0)}
         >
           {episodes.map((episode) => (
-            <div className="flex-none mr-4" key={episode.name}>
+            <div className="flex-none" key={episode.name}>
               <EpisodeComponent episode={episode} />
             </div>
           ))}
