@@ -37,7 +37,7 @@ const WebtoonServiceBanner: React.FC<WebtoonServiceBannerProps> = ({ webtoons })
         <SwiperSlide key={id}>
           <Link href={`/webtoon/${id}`} className="cursor-pointer">
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-              <img src={image} alt={`Webtoon Service Banner ${index}`} className="w-full h-full" />
+              <img src={image} alt={`Webtoon Service Banner ${index}`} className="w-full h-full object-cover" />
               <div
                 style={{
                   position: 'absolute',
