@@ -41,20 +41,23 @@ const Header: React.FC<Props> = ({ showHeader = true }) => {
       <div className="container flex items-center justify-between px-4 py-4 mx-auto">
         <Link href="/" className="flex items-center">
           <Logo />
-          <span className="ml-2 text-lg font-bold">웹툰 서비스</span>
+          <span className="ml-2 text-lg font-bold">GPT TOON</span>
         </Link>
         <nav>
           <ul className="flex items-center">
             <li className="mr-6">
-              <Link href="/" className="text-gray-800 hover:text-gray-600">
+              <Link href="/" className="flex flex-col justify-center items-center text-gray-800 hover:text-gray-600">
                 <HiOutlineHome size={20} />
-                <span className="ml-1">홈</span>
+                <span className="font-bold">홈</span>
               </Link>
             </li>
             <li>
-              <Link href="/movies" className="text-gray-800 hover:text-gray-600">
+              <Link
+                href="/movies"
+                className="flex flex-col justify-center items-center text-gray-800 hover:text-gray-600"
+              >
                 <HiOutlineFilm size={20} />
-                <span className="ml-1">영화</span>
+                <span className="font-bold">영화</span>
               </Link>
             </li>
           </ul>
