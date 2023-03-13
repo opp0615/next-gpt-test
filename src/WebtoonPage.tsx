@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
-import { Episode, Chapter } from '../src/types';
+import React from 'react';
+import { Episode } from '../src/types';
 import Webtoon from '../src/Webtoon';
 import ChaptersList from '../src/ChapterList';
 import { dummyChapters } from '../src/constant';
+import { useDispatch, useSelector } from 'react-redux';
+import { incrementLikes } from './webtoonPageSlice';
+import { RootState } from './store';
 
 const WebtoonPage = ({ episode }: { episode: Episode }) => {
-  const [likes, setLikes] = useState(0); // Initialize the state of likes to 0
+  const dispatch = useDispatch();
+  const episodeLikes = useSelector((state: RootState) => state.webtoonPage.episodeLikes);
+  const likes = episodeLikes[episode.id] ?? 0;
 
   const handleLike = () => {
-    setLikes(likes + 1); // Update the state of likes by incrementing it by 1
+    dispatch(incrementLikes(episode.id));
   };
-
   return (
     <div className="flex flex-col md:flex-row ">
       {/* Webtoon component on top (if screen is smaller than md) */}
